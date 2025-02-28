@@ -77,5 +77,53 @@ Applicants need to do the following to submit their work:
 ---
 ## Additional Information based on the implementation
 
-This section MUST be completed by applicants. It allows applicants to showcase their view on how an application can/should be documented. 
-Applicants can choose to do this in a separate markdown file that needs to be included when the code is committed. 
+This project is designed to manage audition posts and comments which includes the functionalities such as fetching posts, retrieving comments for posts, and integrating external service calls with logging and tracing capabilities. The project is implemented using Spring Boot and integrates with OpenTelemetry for distributed tracing.
+Request/ Response Json:
+Request - GET /posts :
+  Response: [
+    {
+        "id": 1,
+        "userId": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    },
+    {
+        "id": 2,
+        "userId": 2,
+        "title": "qui est esse",
+        "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+    }
+]
+
+
+Request - GET /posts/1/comments
+Response:
+[
+    {
+        "postId": 1,
+        "id": 1,
+        "name": "dignissimos et deleniti voluptate et quod",
+        "email": "Jeremy.Harann@waino.me",
+        "body": "dignissimos et deleniti voluptate et quod", "Jeremy.Harann@waino.me", "exercitationem et id quae cum omnis\nvoluptatibus accusantium et quidem\nut ipsam sint\ndoloremque illo ex atque necessitatibus sed"
+    },
+    {
+        "postId": 1,
+        "id": 2,
+        "name": "rerum commodi est non dolor nesciunt ut",
+        "email": "Pearlie.Kling@sandy.com",
+        "body": "occaecati laudantium ratione non cumque\nearum quod non enim soluta nisi velit similique voluptatibus\nesse laudantium consequatur voluptatem rem eaque voluptatem aut ut\net sit quam"
+    }
+]
+
+**Setup**:
+Clean and build - Clean , build the project - ./gradlew clean build
+Run the app - ./gradlew bootRun
+
+**API Endpoints**:
+ - http://localhost:8080/posts
+ - http://localhost:8080/posts/1
+ - http://localhost:8080/posts/1/comments
+
+
+
+ 
