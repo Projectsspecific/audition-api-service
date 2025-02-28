@@ -77,10 +77,13 @@ Applicants need to do the following to submit their work:
 ---
 ## Additional Information based on the implementation
 
-This project is designed to manage audition posts and comments which includes the functionalities such as fetching posts, retrieving comments for posts, and integrating external service calls with logging and tracing capabilities. The project is implemented using Spring Boot and integrates with OpenTelemetry for distributed tracing.
-Request/ Response Json:
-Request - GET /posts :
-  Response: [
+This project is designed to manage audition posts and comments which includes the functionalities such as fetching posts, retrieving comments for posts, and integrating external service calls with logging and tracing capabilities. 
+
+The project is implemented using Spring Boot and integrates with OpenTelemetry for distributed tracing.
+
+**Request/ Response Json**:
+- Request - GET /posts :
+ -  Response: [
     {
         "id": 1,
         "userId": 1,
@@ -96,8 +99,8 @@ Request - GET /posts :
 ]
 
 
-Request - GET /posts/1/comments
-Response:
+- Request - GET /posts/1/comments
+- Response:
 [
     {
         "postId": 1,
@@ -119,11 +122,8 @@ Response:
 Clean and build - Clean , build the project - ./gradlew clean build
 Run the app - ./gradlew bootRun
 
+
 **API Endpoints**:
  - http://localhost:8080/posts
  - http://localhost:8080/posts/1
  - http://localhost:8080/posts/1/comments
-
-
-
- 
